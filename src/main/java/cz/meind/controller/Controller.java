@@ -10,8 +10,8 @@ import java.util.Scanner;
 @org.springframework.stereotype.Controller
 @RequestMapping("/")
 public class Controller {
-    private final String resources1 = "/home/ubuntu/chem-trails/static/";
-    private final String resources = "src/main/resources/build/";
+    private final String resources = "/home/ubuntu/chem-trails/static/";
+    private final String resources1 = "src/main/resources/build/";
 
     @ResponseBody
     @GetMapping("/")
@@ -32,15 +32,15 @@ public class Controller {
     }
 
     @ResponseBody
-    @GetMapping(value = "/atom.svg", produces = "image/svg")
-    public String atom() {
-        return read("atom.svg");
+    @GetMapping(value = "/index.js.map", produces = "application/javascript")
+    public String javascriptMap() {
+        return read("index.js.map");
     }
 
     @ResponseBody
-    @GetMapping(value = "/atom-radioactive.svg", produces = "image/svg")
-    public String atomRadioactive() {
-        return read("atom-radioactive.svg");
+    @GetMapping(value = "/index.css.map")
+    public String cssMap() {
+        return read("index.css.map");
     }
 
     private String read(String path) {
